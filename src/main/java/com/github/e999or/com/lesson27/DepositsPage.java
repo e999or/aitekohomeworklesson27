@@ -22,7 +22,7 @@ public class DepositsPage extends AbstractPage {
     }
 
     public DepositsPage fourCheckBoxDepositsPage(Integer sizeCheckBox, List<String> dataTable) throws InterruptedException {
-        Configuration.timeout = 5000;
+        Configuration.timeout = 30000;
         getWebDriver().switchTo().frame(0);
         List<String> nameCheckBox = ($$(By.xpath("//div[@class='kitt-checkbox__text']"))).texts();
         Assert.assertTrue(nameCheckBox.size() == sizeCheckBox);
