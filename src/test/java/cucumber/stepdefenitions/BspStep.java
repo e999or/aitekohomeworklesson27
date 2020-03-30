@@ -41,8 +41,8 @@ public class BspStep {
 
     @Тогда("переход осуществлен, проверяем название страницы {string}.")
     public void chekDepositTitle(String titleText) {
+        abstractPage.closeCookieWarning();
         abstractPage.chekTitleAbstract(titleText);
-        $(".cookie-warning__close").shouldBe(visible).click();
     }
 
     @Когда("в верхней панели меню сайта нажимаем кнопку Вклады.")

@@ -8,6 +8,14 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class AbstractPage {
 
+    public void closeCookieWarning(){
+        if($(".cookie-warning").isDisplayed()){
+            $(".cookie-warning__close").shouldBe(visible).click();
+        }
+        else
+         closeCookieWarning();
+    }
+
     public AbstractPage chekTitleAbstract(String string) {
         $("title").shouldHave(attribute("text", string));
         return this;

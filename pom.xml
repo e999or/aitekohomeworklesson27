@@ -18,7 +18,9 @@
     <selenium-java.version>3.141.59</selenium-java.version>
     <webdrivermanager.version>3.8.1</webdrivermanager.version>
     <selenide.version>5.9.0</selenide.version>
+    <allure-maven.version>2.10.0</allure-maven.version>
 
+    <allure-testng.version>2.13.2</allure-testng.version>
   </properties>
 
   <dependencies>
@@ -69,7 +71,7 @@
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-testng</artifactId>
-      <version>2.13.2</version>
+      <version>${allure-testng.version}</version>
     </dependency>
   </dependencies>
 
@@ -90,6 +92,11 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>${allure-maven.version}</version>
       </plugin>
     </plugins>
   </build>
