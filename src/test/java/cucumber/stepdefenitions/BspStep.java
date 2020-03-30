@@ -41,7 +41,6 @@ public class BspStep {
 
     @Тогда("переход осуществлен, проверяем название страницы {string}.")
     public void chekDepositTitle(String titleText) {
-        abstractPage.closeCookieWarning();
         abstractPage.chekTitleAbstract(titleText);
     }
 
