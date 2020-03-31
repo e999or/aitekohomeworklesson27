@@ -11,9 +11,9 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class DepositsPage extends AbstractPage {
+public class DepositsPage extends Page {
 
-    public DepositsPage clickDepositDepositsPage() throws InterruptedException {
+    public DepositsPage clickDepositDepositsP() throws InterruptedException {
         Actions actions = new Actions(getWebDriver());
         $(By.xpath("//span[text() = 'Вклады']")).click();
         actions.moveToElement($(By.linkText("Вклады"))).build().perform();
@@ -21,7 +21,7 @@ public class DepositsPage extends AbstractPage {
         return this;
     }
 
-    public DepositsPage fourCheckBoxDepositsPage(Integer sizeCheckBox, List<String> dataTable) throws InterruptedException {
+    public DepositsPage fourCheckBoxDepositsP(Integer sizeCheckBox, List<String> dataTable) throws InterruptedException {
         Configuration.timeout = 5000;
         getWebDriver().switchTo().frame($x("//div[@class='iframe-resizer']/iframe"));
         List<String> nameCheckBox = ($$(By.xpath("//div[@class='kitt-checkbox__text']"))).texts();
@@ -30,7 +30,7 @@ public class DepositsPage extends AbstractPage {
         return this;
     }
 
-    public DepositsPage checkParamOnLineTabsDepositsPage(Integer tabSize, List<String> dataTable) {
+    public DepositsPage checkParamDepositsP(Integer tabSize, List<String> dataTable) {
         $x(("//input[@data-test-id='checkbox_checkboxOnline'][@aria-checked='true']"));
         List<String> tabsList = $$(By.xpath("//div[@class='offered-products__block offered-products__block_header']")).texts();
         Assert.assertTrue(tabsList.size() == tabSize);
@@ -38,20 +38,20 @@ public class DepositsPage extends AbstractPage {
         return this;
     }
 
-    public DepositsPage clickCheckBoxDepositsPage() {
+    public DepositsPage clickCheckBoxDepositsP() {
         ElementsCollection s = $$(".kitt-checkbox__control");
         s.get(0).click();
         s.get(1).click();
         return this;
     }
 
-    public DepositsPage checkDepositDepositsPage(List<String> dataTable) {
+    public DepositsPage checkDepositDepositsP(List<String> dataTable) {
         List<String> tabsList = $$(By.xpath("//div[@class='offered-products__block offered-products__block_header']")).texts();
         Assert.assertTrue(tabsList.equals(dataTable));
         return this;
     }
 
-    public DepositsPage switchDepositPage() {
+    public DepositsPage switchDepositP() {
         switchTo().window(1);
         return this;
     }
